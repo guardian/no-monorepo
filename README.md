@@ -3,7 +3,7 @@
 A demo multi-build TypeScript project that's not a monorepo/workspace and does not use TS [project
 references](https://www.typescriptlang.org/docs/handbook/project-references.html).
 
-It contains a client and server, both of which depend on shared internal library code, and use [`tRPC`](https://trpc.io/) to share types in production.
+It contains a client and server, both of which depend on shared internal library code, and use [`tRPC`](https://trpc.io/) to share types.
 
 It creates two bundles:
 
