@@ -7,12 +7,12 @@ import { a } from '../lib/a';
 console.log({ a });
 
 type User = {
-	id: number;
+	id: string;
 	name: string;
 };
 
 // dummy data
-const __users: User[] = [{ id: 1337, name: 'alex' }];
+const __users: User[] = [{ id: '1337', name: 'alex' }];
 
 const appRouter = router({
 	userList: publicProcedure.query(async () => {
