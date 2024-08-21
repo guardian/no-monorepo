@@ -4,35 +4,27 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
+devDependencies:
+  '@guardian/prettier':
+    specifier: 8.0.1
+    version: 8.0.1(prettier@3.3.3)(tslib@2.6.3)
+  '@guardian/tsconfig':
+    specifier: 1.0.0
+    version: 1.0.0
+  '@rollup/plugin-commonjs':
+    specifier: 26.0.1
+    version: 26.0.1(rollup@4.21.0)
+  '@rollup/plugin-node-resolve':
+    specifier: 15.2.3
+    version: 15.2.3(rollup@4.21.0)
   '@trpc/client':
     specifier: 11.0.0-rc.482
     version: 11.0.0-rc.482(@trpc/server@11.0.0-rc.482)
   '@trpc/server':
     specifier: 11.0.0-rc.482
     version: 11.0.0-rc.482
-  zod:
-    specifier: ^3.23.8
-    version: 3.23.8
-
-devDependencies:
-  '@guardian/prettier':
-    specifier: ^8.0.1
-    version: 8.0.1(prettier@3.3.3)(tslib@2.6.3)
-  '@guardian/tsconfig':
-    specifier: ^1.0.0
-    version: 1.0.0
-  '@rollup/plugin-commonjs':
-    specifier: 26.0.1
-    version: 26.0.1(rollup@4.21.0)
-  '@rollup/plugin-json':
-    specifier: 6.1.0
-    version: 6.1.0(rollup@4.21.0)
-  '@rollup/plugin-node-resolve':
-    specifier: 15.2.3
-    version: 15.2.3(rollup@4.21.0)
   prettier:
-    specifier: ^3.3.3
+    specifier: 3.3.3
     version: 3.3.3
   rollup:
     specifier: 4.21.0
@@ -47,8 +39,11 @@ devDependencies:
     specifier: 7.1.2
     version: 7.1.2(rollup@4.21.0)
   typescript:
-    specifier: ^5.5.4
+    specifier: 5.5.4
     version: 5.5.4
+  zod:
+    specifier: 3.23.8
+    version: 3.23.8
 
 packages:
 
@@ -343,19 +338,6 @@ packages:
       rollup: 4.21.0
     dev: true
 
-  /@rollup/plugin-json@6.1.0(rollup@4.21.0):
-    resolution: {integrity: sha512-EGI2te5ENk1coGeADSIwZ7G2Q8CJS2sF120T7jLw4xFw9n7wIOXHo+kIYRAoVpJAN+kmqZSoO3Fp4JtoNF4ReA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-    dependencies:
-      '@rollup/pluginutils': 5.1.0(rollup@4.21.0)
-      rollup: 4.21.0
-    dev: true
-
   /@rollup/plugin-node-resolve@15.2.3(rollup@4.21.0):
     resolution: {integrity: sha512-j/lym8nf5E21LwBT4Df1VD6hRO2L2iwUeUmP7litikRsVp1H6NWx20NEp0Y7su+7XGc476GnXXc4kFeZNGmaSQ==}
     engines: {node: '>=14.0.0'}
@@ -523,11 +505,11 @@ packages:
       '@trpc/server': 11.0.0-rc.482+930e652bf
     dependencies:
       '@trpc/server': 11.0.0-rc.482
-    dev: false
+    dev: true
 
   /@trpc/server@11.0.0-rc.482:
     resolution: {integrity: sha512-6Wq3T9V6B6Tv63qLV6qc2rt71AyrwBgzGniywMeddy1k2U2h6O9u7aVopzIpJJsNd7XqheYq830tU4VENysJjQ==}
-    dev: false
+    dev: true
 
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -1050,4 +1032,4 @@ packages:
 
   /zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
-    dev: false
+    dev: true

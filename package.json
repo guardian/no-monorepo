@@ -2,9 +2,7 @@
 	"name": "no-monorepo",
 	"version": "1.0.0",
 	"description": "",
-	"keywords": [],
 	"license": "ISC",
-	"author": "",
 	"type": "module",
 	"exports": {
 		"./client": {
@@ -37,7 +35,6 @@
 		"zod": "3.23.8"
 	},
 	"peerDependencies": {
-		"//": "peerDeps should be a range starting at the devDependencies version",
 		"@trpc/client": "^11.0.0-rc.482"
 	}
 }
