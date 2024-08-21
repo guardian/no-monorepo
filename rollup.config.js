@@ -6,7 +6,7 @@ import { dts } from 'rollup-plugin-dts';
 import esbuild from 'rollup-plugin-esbuild';
 import { nodeExternals } from 'rollup-plugin-node-externals';
 
-/** @type {import("rollup").RollupOptions["plugins"]}   */
+/** @type {import("rollup").RollupOptions["plugins"]} */
 const defaultPlugins = [
 	nodeResolve({
 		extensions: ['.js', '.cjs', '.mjs', '.jsx', '.ts', '.tsx', '.json'],
@@ -15,6 +15,7 @@ const defaultPlugins = [
 	esbuild(),
 ];
 
+/** @type {import("rollup").RollupOptions[]} */
 export default [
 	{
 		// creates the client JS, does not bundle deps
