@@ -1,0 +1,10 @@
+{
+	"extends": "@guardian/tsconfig",
+	"include": ["src"],
+	"files": ["./rollup.config.js"],
+	"compilerOptions": {
+		"checkJs": true,
+		"allowJs": true,
+		"noEmit": true
+	}
+}

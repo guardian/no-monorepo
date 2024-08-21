@@ -1,0 +1,43 @@
+{
+	"name": "no-monorepo",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"author": "",
+	"type": "module",
+	"exports": {
+		"./client": {
+			"types": "./dist/client.d.ts",
+			"default": "./dist/client.js"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "rm -rf dist && rollup -c",
+		"start": "pnpm build && node ./dist/server.js",
+		"types": "tsc"
+	},
+	"prettier": "@guardian/prettier",
+	"devDependencies": {
+		"@guardian/prettier": "8.0.1",
+		"@guardian/tsconfig": "1.0.0",
+		"@rollup/plugin-commonjs": "26.0.1",
+		"@rollup/plugin-node-resolve": "15.2.3",
+		"@trpc/client": "11.0.0-rc.482",
+		"@trpc/server": "11.0.0-rc.482",
+		"prettier": "3.3.3",
+		"rollup": "4.21.0",
+		"rollup-plugin-dts": "6.1.0",
+		"rollup-plugin-esbuild": "6.1.1",
+		"rollup-plugin-node-externals": "7.1.2",
+		"typescript": "5.5.4",
+		"zod": "3.23.8"
+	},
+	"peerDependencies": {
+		"//": "peerDeps should be a range starting at the devDependencies version",
+		"@trpc/client": "^11.0.0-rc.482"
+	}
+}
