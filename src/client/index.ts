@@ -5,8 +5,8 @@ import { a } from '../lib/a';
 // dummy shared code
 console.log({ a });
 
-// Pass AppRouter as generic here. 👇 This lets the `trpc` object know
-// what procedures are available on the server and their input/output types.
+// Pass AppRouter as generic here. 👇 This lets the `trpc` object know what
+// procedures are available on the server and their input/output types.
 const trpc = createTRPCClient<AppRouter>({
 	links: [
 		httpBatchLink({
@@ -20,8 +20,8 @@ export const getUser = async () => {
 	const user = await trpc.userById.query('1');
 
 	if (user) {
-		// @ts-expect-error -- 'missingProp' does not exist on
-		// type '../server/index.ts#User'
+		// @ts-expect-error -- the compiler knows 'missingProp' does not exist
+		// on 'user'
 		console.log(user.missingProp);
 	}
 
