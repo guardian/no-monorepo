@@ -2,14 +2,10 @@ import { createHTTPServer } from '@trpc/server/adapters/standalone';
 import { z } from 'zod';
 import { publicProcedure, router } from './trpc';
 import { a } from '../lib/a';
+import type { User } from '../@types/User';
 
 // dummy shared code
 console.log({ a });
-
-type User = {
-	id: string;
-	name: string;
-};
 
 // dummy data
 const __users: User[] = [{ id: '1337', name: 'alex' }];
