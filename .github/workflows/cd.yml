@@ -47,6 +47,6 @@ jobs:
       # Now do something with the build output
 
       - name: Deploy ${{ matrix.target }}
-        run: '${{ matrix.target }}.js $(gzip -c ${{ matrix.target }}.js | wc -c) bytes (gzipped)'
+        run: echo "${{ matrix.target }}.js $(gzip -c ${{ matrix.target }}.js | wc -c) bytes (gzipped)"
 
       # etc...
