@@ -17,14 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: corepack enable
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-
-      - run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/setup-node-env
 
       - run: pnpm build
 
@@ -34,6 +27,8 @@ jobs:
           name: dist
 
   deploy:
+    needs: build
+
     runs-on: ubuntu-latest
 
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
