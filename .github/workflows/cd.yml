@@ -10,6 +10,29 @@ on:
     types: [completed]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          path: dist
+          name: dist
+
   deploy:
     runs-on: ubuntu-latest
 
@@ -19,20 +42,16 @@ jobs:
       matrix:
         include:
           - target: server
-            command: echo "deploy dist/server.js to lambda"
           - target: client
-            command: echo "publish package to NPM"
 
     steps:
       - uses: actions/download-artifact@v4
         with:
           name: dist
 
-      - run: ls dist
-
       # Now do something with the build output
 
       - name: Deploy ${{ matrix.target }}
-        run: ${{ matrix.command }}
+        run: ls dist
 
       # etc...
