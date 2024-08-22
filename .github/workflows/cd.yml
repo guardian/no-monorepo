@@ -1,0 +1,34 @@
+name: CD
+
+# This is an exmample workflow to deploys the build outputs to their various
+# destinations.
+
+on:
+  workflow_run:
+    workflows: [CI]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    strategy:
+      matrix:
+        include:
+          - target: server
+            command: echo "deploy dist/server.js to lambda"
+          - target: client
+            command: echo "publish package to NPM"
+
+    steps:
+      - uses: actions/download-artifact@v4
+
+      - run: ls dist
+
+      # Now do something with the build output
+
+      - name: Deploy ${{ matrix.target }}
+        run: ${{ matrix.command }}
+
+      # etc...
