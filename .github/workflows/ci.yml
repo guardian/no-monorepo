@@ -18,6 +18,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: ./.github/actions/setup-node-env
+      - uses: ./.github/setup-node-env
 
       - run: pnpm ${{ matrix.check }}
