@@ -1,4 +1,4 @@
-name: CD
+name: Deploy
 
 # This is an exmample workflow to deploys the build outputs to their various
 # destinations.
