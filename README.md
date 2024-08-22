@@ -10,7 +10,9 @@ It creates two bundles:
 1. `dist/server.js` - a standalone Node server
 2. `dist/client.js` - a client library with types that depends on `@trpc/client`
 
-The entire project is publishable as an NPM package, with only the client library available to import:
+You could then deploy `dist/server.js` to a lambda, for example.  
+
+The project is also publishable as an NPM package, which would provide `dist/client.js` for consumers to import:
 
 ```ts
 import { createUser, getUser } from 'no-monorepo/client';
