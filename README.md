@@ -13,7 +13,7 @@ It creates two bundles:
 The entire project is publishable as an NPM package, with only the client library available to import:
 
 ```ts
-import { getUser } from 'no-monorepo/client';
+import { createUser, getUser } from 'no-monorepo/client';
 
 // this would not work
 import type { AppRouter } from 'no-monorepo/server';

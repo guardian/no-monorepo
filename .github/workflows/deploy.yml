@@ -1,0 +1,35 @@
+name: Deploy
+
+# This is an exmample workflow to deploys the build outputs to their various
+# destinations.
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm types
+      - run: pnpm build
+
+      # Now do something with the build output
+
+      - run: echo "deploy dist/server.js to lambda"
+      - run: echo "publish package to NPM"
+
+      # etc...
