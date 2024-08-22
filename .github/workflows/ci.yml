@@ -1,4 +1,4 @@
-name: Verify Project
+name: CI
 
 on:
   push:
