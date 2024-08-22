@@ -12,6 +12,7 @@ jobs:
       matrix:
         include:
           - check: types
+          - check: test
 
     steps:
       - uses: actions/checkout@v4

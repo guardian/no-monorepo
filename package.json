@@ -16,6 +16,7 @@
 	"scripts": {
 		"build": "rm -rf dist && rollup -c",
 		"start": "pnpm build && node ./dist/server.js",
+		"test": "node --test",
 		"types": "tsc"
 	},
 	"prettier": "@guardian/prettier",
